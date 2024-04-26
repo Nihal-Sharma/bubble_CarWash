@@ -6,6 +6,8 @@ import Home from './Navbar_Comp/Home';
 import Services from './Navbar_Comp/Services';
 import ContactUs from './Navbar_Comp/ContactUs';
 import AboutUs from './Navbar_Comp/AboutUs';
+import ChooseService from './Components/ChooseService';
+import LoginForm from './Components/LoginForm';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route path='/Services' element ={<Services/>} />
         <Route path='/ContactUs' element ={<ContactUs/>} />
         <Route path='/AboutUs' element ={<AboutUs/>} />
+        <Route path='chooseservice' element = {<ChooseService/>} />
+        <Route path='/login' element = {<LoginForm/>}/>
       </Routes>
     </div>
   );

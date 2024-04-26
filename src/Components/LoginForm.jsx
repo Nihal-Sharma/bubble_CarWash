@@ -1,10 +1,23 @@
 import React, { useState } from "react";
+import { useStore } from "../Store/Store";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
+ const navigate = useNavigate()
+  const verified = useStore((state)=> state.login)
   const [otpreq, setOtpreq] = useState("false");
   function requestotp(){
     setOtpreq("true")
   }
+
+  const verify = () =>{
+  
+    localStorage.setItem("LOGGEDIN" ,"true")
+    navigate("/chooseservice")
+  
+  }
+
+
   return (
     <div
       style={{
@@ -85,6 +98,7 @@ const LoginForm = () => {
               padding :'10px',
               marginTop :'20px'
             }}
+            onClick={verify}
           >
             Verify
           </button>

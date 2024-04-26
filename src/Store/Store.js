@@ -5,6 +5,11 @@ const loggedcheck = () =>{
     return checklog
 }
 
-const useStore = create ((set) =>({
-    loggedin : loggedcheck()
+const successLogin = ()=>{
+    localStorage.setItem("LOGGEDIN" , "true")
+}
+
+export const useStore = create ((set) =>({
+    loggedin : loggedcheck(),
+    login : ()=>set((state)=>({ loggedin :'true'  ,successLogin }))
 }))
